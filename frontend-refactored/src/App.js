@@ -1,29 +1,29 @@
-import "@/App.css";
+import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "sonner";
-import { AuthProvider } from "@/context/AuthContext";
-import { ProtectedRoute } from "@/components/layout/ProtectedRoute";
-import { AppShell } from "@/components/layout/AppShell";
+import { AuthProvider } from "./context/AuthContext";
+import { ProtectedRoute } from "./components/layout/ProtectedRoute";
+import { AppShell } from "./components/layout/AppShell";
 
-import Login from "@/pages/Login";
-import Dashboard from "@/pages/Dashboard";
-import Clientes from "@/pages/Clientes";
-import ClienteDetalhes from "@/pages/ClienteDetalhes";
-import ClienteForm from "@/pages/ClienteForm";
-import Produtos from "@/pages/Produtos";
-import ProdutoDetalhes from "@/pages/ProdutoDetalhes";
-import ProdutoForm from "@/pages/ProdutoForm";
-import ImportarProdutos from "@/pages/ImportarProdutos";
-import Orcamentos from "@/pages/Orcamentos";
-import NovoOrcamento from "@/pages/NovoOrcamento";
-import Pedidos from "@/pages/Pedidos";
-import Compras from "@/pages/Compras";
-import Estoque from "@/pages/Estoque";
-import Impostos from "@/pages/Impostos";
-import Relatorios from "@/pages/Relatorios";
-import Usuarios from "@/pages/Usuarios";
-import Configuracoes from "@/pages/Configuracoes";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Clientes from "./pages/Clientes";
+import ClienteDetalhes from "./pages/ClienteDetalhes";
+import ClienteForm from "./pages/ClienteForm";
+import Produtos from "./pages/Produtos";
+import ProdutoDetalhes from "./pages/ProdutoDetalhes";
+import ProdutoForm from "./pages/ProdutoForm";
+import ImportarProdutos from "./pages/ImportarProdutos";
+import Orcamentos from "./pages/Orcamentos";
+import NovoOrcamento from "./pages/NovoOrcamento";
+import Pedidos from "./pages/Pedidos";
+import Compras from "./pages/Compras";
+import Estoque from "./pages/Estoque";
+import Impostos from "./pages/Impostos";
+import Relatorios from "./pages/Relatorios";
+import Usuarios from "./pages/Usuarios";
+import Configuracoes from "./pages/Configuracoes";
 
 function App() {
   return (
