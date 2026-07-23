@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 96%;
+        --foreground: 60 2% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 60 2% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 60 2% 11%;
+        --primary: 42 100% 47%;
+        --primary-foreground: 60 2% 11%;
+        --secondary: 0 0% 96%;
+        --secondary-foreground: 60 2% 11%;
+        --muted: 220 14% 96%;
+        --muted-foreground: 220 9% 46%;
+        --accent: 42 100% 47%;
+        --accent-foreground: 60 2% 11%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 42 100% 47%;
+        --chart-1: 42 100% 47%;
+        --chart-2: 60 2% 11%;
+        --chart-3: 220 9% 46%;
+        --chart-4: 217 91% 60%;
+        --chart-5: 158 64% 42%;
+        --radius: 0.25rem;
+
+        /* Absoluta brand tokens */
+        --abs-black: #1D1D1C;
+        --abs-yellow: #F2A900;
+        --abs-yellow-hover: #FFB81C;
+        --abs-white: #FFFFFF;
+        --abs-gray: #F5F5F5;
+        --abs-sidebar: #1D1D1C;
+        --abs-sidebar-hover: #2A2A29;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html, body, #root {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        background-color: var(--abs-gray);
+        color: var(--abs-black);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+        font-family: 'Rajdhani', 'Inter', sans-serif;
+        letter-spacing: -0.01em;
+    }
+    .font-mono, code, .data-value {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+    }
+}
+
+@layer components {
+    .abs-label {
+        @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-500;
+    }
+    .abs-card {
+        @apply bg-white border border-neutral-200 rounded-sm;
+    }
+    .abs-panel-title {
+        font-family: 'Rajdhani', sans-serif;
+        @apply text-lg font-semibold tracking-tight text-[#1D1D1C];
+    }
+    .abs-grid-bg {
+        background-image:
+            linear-gradient(rgba(29,29,28,.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29,29,28,.04) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+    .abs-noise {
+        position: relative;
+    }
+    .abs-noise::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: .05;
+        background-image: radial-gradient(rgba(255,255,255,.6) 1px, transparent 1px);
+        background-size: 3px 3px;
+        mix-blend-mode: overlay;
+    }
+    .abs-sidebar-link {
+        @apply relative flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-neutral-300 rounded-sm;
+        transition: background-color 150ms ease, color 150ms ease;
+    }
+    .abs-sidebar-link:hover {
+        background-color: var(--abs-sidebar-hover);
+        color: #fff;
+    }
+    .abs-sidebar-link.active {
+        background-color: var(--abs-sidebar-hover);
+        color: var(--abs-yellow);
+    }
+    .abs-sidebar-link.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 3px;
+        background: var(--abs-yellow);
+    }
+    .abs-btn-primary {
+        @apply inline-flex items-center gap-2 bg-[#F2A900] text-[#1D1D1C] font-semibold px-4 py-2 rounded-sm text-sm;
+        transition: background-color 150ms ease, transform 150ms ease;
+    }
+    .abs-btn-primary:hover {
+        background-color: var(--abs-yellow-hover);
+    }
+    .abs-btn-primary:active { transform: translateY(1px); }
+    .abs-btn-ghost {
+        @apply inline-flex items-center gap-2 bg-white border border-neutral-200 text-[#1D1D1C] font-medium px-3.5 py-2 rounded-sm text-sm;
+        transition: background-color 150ms ease, border-color 150ms ease;
+    }
+    .abs-btn-ghost:hover {
+        background-color: #FAFAFA;
+        border-color: #D4D4D4;
+    }
+    .abs-table th {
+        @apply text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500 py-3 px-4 text-left bg-neutral-50 border-b border-neutral-200;
+    }
+    .abs-table td {
+        @apply py-3 px-4 text-sm text-[#1D1D1C] border-b border-neutral-100;
+    }
+    .abs-table tr:hover td { background-color: #FAFAFA; }
+    .abs-hex-pattern {
+        background-color: #1D1D1C;
+        background-image:
+            radial-gradient(circle at 20% 20%, rgba(242,169,0,.08), transparent 40%),
+            radial-gradient(circle at 80% 80%, rgba(242,169,0,.06), transparent 40%);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] { display: contents !important; }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit; margin-right: inherit;
+        margin-top: inherit; margin-bottom: inherit;
+        padding-left: inherit; padding-right: inherit;
+        padding-top: inherit; padding-bottom: inherit;
+        column-gap: inherit; row-gap: inherit; gap: inherit;
+        border-left-width: inherit; border-right-width: inherit;
+        border-top-width: inherit; border-bottom-width: inherit;
+        border-left-style: inherit; border-right-style: inherit;
+        border-top-style: inherit; border-bottom-style: inherit;
+        border-left-color: inherit; border-right-color: inherit;
+        border-top-color: inherit; border-bottom-color: inherit;
+    }
+}

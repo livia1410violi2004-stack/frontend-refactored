@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: frontend
+    env: node
+    region: oregon
+    plan: free
+    
+    # Build command
+    buildCommand: npm install && npm run build
+    
+    # Start command - serve the static build
+    startCommand: npm install -g serve && serve -s build -l 3000
+    
+    # Environment variables
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://your-api-domain.com
+        sync: false
+      
+      - key: REACT_APP_ENVIRONMENT
+        value: production
+        sync: false
+    
+    # Healthcheck
+    healthCheckPath: /
+    
+    # AutoDeploy - redeploy when branch is updated
+    autoDeploy: true
+    
+    # Root directory
+    rootDir: frontend

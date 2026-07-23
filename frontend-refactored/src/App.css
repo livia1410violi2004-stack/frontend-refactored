@@ -1,0 +1,28 @@
+/* ABSOLUTA ERP - app-level styles */
+.App {
+    min-height: 100vh;
+}
+
+/* Custom scrollbar for sidebar */
+.abs-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.abs-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.abs-scroll::-webkit-scrollbar-thumb {
+    background: #3A3A38;
+    border-radius: 3px;
+}
+.abs-scroll::-webkit-scrollbar-thumb:hover {
+    background: #4A4A48;
+}
+
+/* Fade-up entrance */
+@keyframes abs-fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.abs-fade-up {
+    animation: abs-fade-up 300ms ease both;
+}
